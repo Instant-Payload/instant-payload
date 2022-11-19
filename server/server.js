@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const apiRouter = require('./routes/api')
+const apiRouter = require('./routes/api.js')
 const app = express();
 
 const PORT = 3000;
@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.use('/api', apiRouter);
+app.use('/api', apiRouter);
 
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
