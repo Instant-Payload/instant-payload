@@ -12,7 +12,7 @@ const data = {
       name: 'Chocolate',
       price: 3,
       image: './imgs/Chocolate.jpg',
-      category: 'Snack',
+      category: '/Snack',
     },
     {
       id: 3,
@@ -26,14 +26,14 @@ const data = {
       name: 'ORION Turtle Chips',
       price: 5,
       image: './imgs/Chips.png',
-      category: 'Snack',
+      category: '/Snack',
     },
     {
       id: 5,
       name: 'Instant Noodle',
       price: 4,
       image: './imgs/Instant noodle.jpg',
-      category: 'Snack',
+      category: '/Snack',
     },
   ],
 };
