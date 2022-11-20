@@ -4,14 +4,13 @@ const CartController = {
 
   async getCart(req, res, next) {
     try {
-      //CALL SELECT * FROM ORDER_ITEMS
-      const result = await db.query();
-      res.locals.cart = cart;
+      const cart = await db.query('SELECT * FROM order_item');
+      res.locals.cart = cart.rows;
       return next();
     } catch {
       return next(
         {
-          log: 'Express error handler caught a middleware error in getMethod',
+          log: 'Express error handler caught a middleware error in getCart',
           status: 500,
           message: { err: 'An error occurred in getCart' }
         }
@@ -21,13 +20,15 @@ const CartController = {
 
   async addToCart(req, res, next) {
     try {
-      all = await Method.find();
-      res.locals.all = all;
+      const insertCommand = 'INSERT INTO ORDER_ITEM (_id, product_id, quantity) VALUES (' +
+       req.body._id + ', ' + req.body.product_id + ', 1)';
+      const addedRes = await db.query(insertCommand);
+      res.locals.addedRes = addedRes;
       return next();
     } catch {
       return next(
         {
-          log: 'Express error handler caught a middleware error in getMethod',
+          log: 'Express error handler caught a middleware error in addToCart',
           status: 500,
           message: { err: 'An error occurred in addToCart' }
         }
@@ -37,8 +38,9 @@ const CartController = {
 
   async deleteItem(req, res, next) {
     try {
-      //DELETE [request body] FROM ORDER ITEMS
-      res.locals.all = all;
+      const deleteCommand = 'DELETE FROM order_item WHERE _id=' + req.body._id;
+      const deleteRes = await db.query(deleteCommand);
+      res.locals.deleteRes = deleteRes;
       return next();
     } catch {
       return next(
@@ -50,6 +52,22 @@ const CartController = {
       );
     }
   },
+
+  async deleteAllItems(req, res, next) {
+    try {
+      const deleteRes = await db.query('DELETE FROM Customers');
+      res.locals.deleteRes = deleteRes;
+      return next();
+    } catch {
+      return next(
+        {
+          log: 'Express error handler caught a middleware error in getMethod',
+          status: 500,
+          message: { err: 'An error occurred in deleteItem' }
+        }
+      );
+    }
+  }
 };
 
 module.exports = CartController;
