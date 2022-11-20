@@ -7,7 +7,7 @@ const ProductController = {
   async getAllProducts(req, res, next) {
     try {
       const all = await db.query('SELECT * FROM product');
-      res.locals.all = all;
+      res.locals.all = all.rows;
       return next();
     } catch {
       return next(
