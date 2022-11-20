@@ -1,3 +1,3 @@
 export default function Veggie() {
-    return <h1>veggie</h1>
+    return <h1>Vegetables</h1>
 }
