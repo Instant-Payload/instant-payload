@@ -18,7 +18,7 @@ router.get('/cart',
 
 router.post('/cart', 
   cartController.addToCart,
-  (req, res) => res.status(200).json(res.locals.cart)
+  (req, res) => res.status(200).json(res.locals.addedRes)
 );
 
 router.post('/addProduct',
@@ -26,16 +26,16 @@ router.post('/addProduct',
   (req, res) => res.status(200).send(res.locals.createdProduct)
 );
 
+router.delete('/cart/all',
+  cartController.deleteAllItems,
+  (req, res) => res.status(200).send(res.locals.deleteRes)
+);
+
 router.delete('/cart',
   cartController.deleteItem,
-  (req, res) => res.status(200).send(res.locals.deleteResult)
+  (req, res) => res.status(200).send(res.locals.deleteRes)
 );
-/*
-router.delete('/',
-  methodController.deleteMethod,
-  (req, res) => res.status(200).send(res.locals.deleteResult)
-);
-*/
+
 
 
 
