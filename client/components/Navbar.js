@@ -9,9 +9,12 @@ export default function Navbar() {
         Instant Payload 
       </Link>
       <ul>
-        <CustomLink to="/veggie">Veggie</CustomLink>
-        <CustomLink to="/login">Login</CustomLink>
+        <CustomLink to="/protein">Protein</CustomLink>
+        <CustomLink to="/veggie">Vegetables</CustomLink>
+        <CustomLink to="/snacks">Snacks</CustomLink>
         <CustomLink to="/cart">Cart</CustomLink>
+        <CustomLink to="/login">Login</CustomLink>
+       
       </ul>
     </nav>
   )

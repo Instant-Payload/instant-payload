@@ -14,9 +14,11 @@
 import { Route, Routes } from "react-router-dom";
 import Home from './pages/Home'
 import Navbar from "./Navbar";
-import Veggie from './pages/Veggie'
+import Vegetables from './pages/Vegetables'
 import Login from "./pages/Login";
 import Cart from './pages/Cart'
+import Protein from "./pages/Protein";
+import Snacks from "./pages/Snacks";
 
 export default function App() {
 
@@ -25,10 +27,14 @@ export default function App() {
       <Navbar />
       <div className="container">
         <Routes>
+
           <Route path= '/' element={<Home />} />
-          <Route path= '/veggie' element={<Veggie />} />
+          <Route path= '/protein' element={<Protein />} />
+          <Route path= '/vegetables' element={<Vegetables />} />
+          <Route path= '/sancks' element={<Snacks />} />
           <Route path= '/login' element={<Login />} />
           <Route path= '/cart' element={<Cart />} />
+          
         </Routes>
       </div>
     </>
