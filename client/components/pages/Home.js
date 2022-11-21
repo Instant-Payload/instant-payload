@@ -23,7 +23,7 @@ export default function Home() {
 
     return(
         <>
-        <DisplayCard items={items}/>
+            <DisplayCard items={items} />
         </>
     )
      

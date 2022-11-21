@@ -22,13 +22,12 @@ const Cards = (item) => {
     <div className="cards">
       <img
         src={image}
-        height="100"
-        width="auto"
+        className='photo'
       />
       <div className="item_details">
         <p>{name}</p>
         <p>{price}</p>
-        <button onClick={addToCart} >Add to Cart</button>
+        <button onClick={addToCart} className='button'>Add to Cart</button>
       </div>
     </div>
   );

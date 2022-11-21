@@ -11,11 +11,11 @@ const DisplayCard = (props) => {
 // console.log(result);
   
   return (
-    <section>
+    <section className='itemFlex'>
       {items.map((item) => {
         return (
           <div key={item._id}>
-            <Cards id={item._id} name={item.name} price={item.price} image={item.image} />
+            <Cards  id={item._id} name={item.name} price={item.price} image={item.image} />
           </div>
         );
       })}
