@@ -1,5 +1,6 @@
 const data = {
-  productItems: [
+  productItems: 
+  [
     {
         "_id": 3,
         "name": "yellow onion",
