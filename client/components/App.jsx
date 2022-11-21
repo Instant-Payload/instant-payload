@@ -31,7 +31,7 @@ export default function App() {
           <Route path= '/' element={<Home />} />
           <Route path= '/protein' element={<Protein />} />
           <Route path= '/vegetables' element={<Vegetables />} />
-          <Route path= '/sancks' element={<Snacks />} />
+          <Route path= '/snacks' element={<Snacks />} />
           <Route path= '/login' element={<Login />} />
           <Route path= '/cart' element={<Cart />} />
           
