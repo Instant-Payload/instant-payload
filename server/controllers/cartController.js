@@ -4,7 +4,7 @@ const CartController = {
 
   async getCart(req, res, next) {
     try {
-      const cart = await db.query('SELECT * FROM order_item');
+      const cart = await db.query('SELECT order_item._id, order_item.quantity, product.name, product.price, product.image, product.category FROM order_item INNER JOIN product ON order_item.product_id = product._id;');
       res.locals.cart = cart.rows;
       return next();
     } catch {
