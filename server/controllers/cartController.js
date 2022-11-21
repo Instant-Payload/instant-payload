@@ -55,7 +55,7 @@ const CartController = {
 
   async deleteAllItems(req, res, next) {
     try {
-      const deleteRes = await db.query('DELETE FROM Customers');
+      const deleteRes = await db.query('DELETE FROM order_item');
       res.locals.deleteRes = deleteRes;
       return next();
     } catch {
