@@ -17,13 +17,14 @@ body {
 }
 
 .nav {
-  background-color: #333;
+  background-color: #90a955; 
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
+  
 }
 
 .site-title {
@@ -36,6 +37,7 @@ body {
   list-style: none;
   display: flex;
   gap: 1rem;
+  
 }
 
 .nav a {
@@ -45,12 +47,15 @@ body {
   display: flex;
   align-items: center;
   padding: .25rem;
+  
+
 }
 
 .nav li.active {
-  background-color: #555;
+  background-color: #4e7c25;
+  
 }
 
 .nav li:hover {
-  background-color: #777;
+  background-color: #4f772d;
 }

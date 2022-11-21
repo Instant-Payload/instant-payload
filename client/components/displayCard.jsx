@@ -9,12 +9,6 @@ const DisplayCard = (props) => {
   
 // const result = data.productItems.filter((item) => item.category === 'Produce');
 // console.log(result);
-// const [cart, setCart] = useState([]);
-
-// const addToCartClicked = (item) => {
-//   cart.push(item);
-//   console.log(cart);
-// }
   
   return (
     <section>
