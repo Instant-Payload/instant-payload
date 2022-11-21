@@ -21,7 +21,6 @@ import Protein from "./pages/Protein";
 import Snacks from "./pages/Snacks";
 
 export default function App() {
-
   return (
     <>
       <Navbar />
