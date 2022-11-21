@@ -1,23 +1,34 @@
+import { STATES } from 'mongoose';
 import React from 'react';
 import { useContext, useState } from 'react';
+import Axios from 'axios';
 
 //data includes the name, price, and image of an item
 const Cards = (item) => {
-  const { name, price, image } = item;
+  const { id, name, price, image } = item;
   console.log(name);
   console.log(price);
   console.log(image);
+
+  const addToCart = () => {
+    Axios.post('http://localhost:3000/api/cart', 
+      {
+        "_id": id,
+        "product_id": id
+      }
+    )
+  }
   return (
     <div className="cards">
       <img
-        src="https://m.media-amazon.com/images/I/618tW+-9JzL.jpg"
+        src={image}
         height="100"
         width="auto"
       />
       <div className="item_details">
         <p>{name}</p>
         <p>{price}</p>
-        <button>Add to Cart</button>
+        <button onClick={addToCart} >Add to Cart</button>
       </div>
     </div>
   );
